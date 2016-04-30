@@ -1,13 +1,13 @@
 /***
  * 
- *    Title: "快乐消消乐" 项目
+ *    Title: "Diamond Crash" Project
  *           
- *    交换特殊游戏对象
+ *    Swap special game object
  *           
  *    Description: 
- *          [描述]   
+ *        
  * 
- *    Date: 2015
+ *    Date: 2016
  *    
  *    Version: 0.1
  *    
@@ -62,7 +62,7 @@ public class SwapSpecialObjects : MonoBehaviour
     void ObjetsAreOfTypeUniversalAndHorizontal()
     {
         GameOperations.instance.StopShowingHint();
-        swapTwoObjectScript.Swipe(item1, item2);
+        swapTwoObjectScript.Swap(item1, item2);
 
         for (int i = 0; i < ColumnManager.instance.gameColumns.Length; i++)
         {
@@ -107,7 +107,7 @@ public class SwapSpecialObjects : MonoBehaviour
     void ObjectsAreOfTypeHorizontal()
     {
         GameOperations.instance.StopShowingHint();
-        swapTwoObjectScript.Swipe(item1, item2);
+        swapTwoObjectScript.Swap(item1, item2);
 
         if (type1 == type2)
         {

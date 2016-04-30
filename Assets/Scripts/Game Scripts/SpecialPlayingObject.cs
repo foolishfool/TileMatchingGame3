@@ -1,11 +1,11 @@
 /***
  * 
- *    Title: "快乐消消乐" 项目
+ *    Title: "DiamondCrash" Project
  *           
- *    特殊游戏对象
+ *    Special Game Object
  *           
  *    Description: 
- *          [描述]   
+ *       
  * 
  *    Date: 2015
  *    

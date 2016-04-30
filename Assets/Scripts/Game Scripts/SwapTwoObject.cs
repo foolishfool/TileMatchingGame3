@@ -1,13 +1,13 @@
 /***
  * 
- *    Title: "快乐消消乐" 项目
+ *    Title: "Diamond Crash" Project
  *           
- *    交换棋子
+ *   Swap chess
  *           
  *    Description: 
- *          [描述]   
+ *          
  * 
- *    Date: 2015
+ *    Date: 2016
  *    
  *    Version: 0.1
  *    
@@ -31,39 +31,39 @@ public class SwapTwoObject : MonoBehaviour
 	}
 
     /// <summary>
-    /// 第二个棋子（相对第一个棋子的）方位
+    /// the second chess's bearing relative to the first chess 
     /// </summary>
     /// <param name="obj1"></param>
     /// <param name="obj2"></param>
     /// <returns>
-    /// 返回：
-    /// 0：水平方向，第二个棋子在（第一个棋子的）右边。
-    /// 1：水平方向，第二个棋子在（第一个棋子的）左边。
-    /// 2：垂直方向，第二个棋子，在上面
-    /// 3：垂直方向，第二个棋子，在下面
+    /// return:
+    /// 0：horizonal, the second chess is at right side
+    /// 1：horizonal the second chess is at left side
+    /// 2：vertical the sceond chess is up
+    /// 3：vertical the scond chess is down
     /// </returns>
     int GetDirectionOfSecondObject(GameObject obj1, GameObject obj2)
     {
         int index = -1;
 
-        //两个棋子，在同一垂直方向上（Y）
+        //two chesses are in the same Y vertical direction（Y）
         if (obj1.transform.position.x == obj2.transform.position.x)
         {
-            //第二个棋子，在上面
+            //the second chess is up
             if (obj1.transform.position.y < obj2.transform.position.y)
                 index = 2;
-            //第二个棋子，在下面
+            //the scond chess is down
             else
                 index = 3;
         }
-        //两个棋子，在同一水平方向上（X）
+        //two chesses are in the same horizional direction （X）
         else
         {
-            //第二个棋子在（第一个棋子的）左边。
+            //the second chess is at left side
             if (obj1.transform.position.x > obj2.transform.position.x)
                 index = 1;
             else
-            //第二个棋子在（第一个棋子的）右边。
+                //the second chess is at right side
                 index = 0;
         }
        
@@ -89,7 +89,7 @@ public class SwapTwoObject : MonoBehaviour
         ObjectType type1 = item1.objectType;
         ObjectType type2 = item2.objectType;
 
-        //普通类型
+        //Normal type
         if (type1 == ObjectType.None && type2 == ObjectType.None)
         {
             if (item1.isMovePossibleInDirection(GetDirectionOfSecondObject(object1, object2)) == false && (item2.isMovePossibleInDirection(GetDirectionOfSecondObject(object2, object1)) == false))
@@ -100,11 +100,11 @@ public class SwapTwoObject : MonoBehaviour
             else
             {
                 GameOperations.instance.StopShowingHint();
-                Swipe(item1, item2);
+                Swap(item1, item2);
                 GameOperations.instance.Invoke("AssignNeighbours", .1f);
             }
         }
-        //特殊类型
+        //Special type
         else if ((type2 == ObjectType.None && (type1 == ObjectType.Horizontal || type1 == ObjectType.Vertical))
             || (type1 == ObjectType.None && (type2 == ObjectType.Horizontal || type2 == ObjectType.Vertical)))
         {
@@ -113,11 +113,11 @@ public class SwapTwoObject : MonoBehaviour
                 Invoke("ChangePositionBack", GameManager.instance.swappingTime);
                 return;
             }
-            //符合条件，开始正式交换棋子
+            //meet the condition, swap the chesses formally
             else
             {
                 GameOperations.instance.StopShowingHint();
-                Swipe(item1, item2);
+                Swap(item1, item2);
                 GameOperations.instance.Invoke("AssignNeighbours", .1f);
             }
         }
@@ -129,7 +129,7 @@ public class SwapTwoObject : MonoBehaviour
     }
 
     /// <summary>
-    /// 交换复位（交换回来）
+    /// swap reset (swip back)
     /// </summary>
     void ChangePositionBack()
     {
@@ -140,16 +140,16 @@ public class SwapTwoObject : MonoBehaviour
         GameOperations.instance.FreeMachine();
     }
 
-    //交换
-    internal void Swipe(PlayingObject item1, PlayingObject item2)
+    //swap
+    internal void Swap(PlayingObject item1, PlayingObject item2)
     {   
-        ColumnScript firstColumn = item1.myColumnScript;   //所属“列”脚本
+        ColumnScript firstColumn = item1.myColumnScript;   //the column script belongs to
         ColumnScript secondColumn = item2.myColumnScript;
 
         PlayingObject temp = item1;
 
 
-        item1.transform.parent = secondColumn.transform;   //第1个棋子父节点，被第2“列”赋值
+        item1.transform.parent = secondColumn.transform;   //the first chess's parent node is assigned values by the second column
         item2.transform.parent = firstColumn.transform;
 
         item1.myColumnScript = secondColumn;

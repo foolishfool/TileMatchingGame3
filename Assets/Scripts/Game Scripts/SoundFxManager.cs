@@ -1,13 +1,13 @@
 /***
  * 
- *    Title: "快乐消消乐" 项目
+ *    Title: "Diamond Crash" Project
  *           
- *    音频管理
+ *    Sound Manager
  *           
  *    Description: 
- *          [描述]   
+ *         
  * 
- *    Date: 2015
+ *    Date: 2016
  *    
  *    Version: 0.1
  *    

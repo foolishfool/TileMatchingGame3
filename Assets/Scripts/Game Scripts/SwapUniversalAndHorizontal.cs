@@ -1,13 +1,13 @@
 /***
  * 
- *    Title: "快乐消消乐" 项目
+ *    Title: "Diamond Crash" Project
  *           
- *    交换特殊游戏棋子
+ *    Swap Special Chess
  *           
  *    Description: 
- *          [描述]   
+ *         
  * 
- *    Date: 2015
+ *    Date: 2016
  *    
  *    Version: 0.1
  *    

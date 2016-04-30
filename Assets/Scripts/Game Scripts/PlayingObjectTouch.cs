@@ -1,14 +1,14 @@
 /***
  * 
- *    Title: "快乐消消乐" 项目
+ *    Title: "Diamond Crash" Project
  *           
- *    “游戏对象”操作类 
+ *    “GameObject” operation class 
  *           
  * 
  *    Description: 
- *          [描述]   
+ *       
  * 
- *    Date: 2015
+ *    Date: 2016
  *    
  *    Version: 0.1
  *    
@@ -43,26 +43,26 @@ public class PlayingObjectTouch : MonoBehaviour
     {
         if (playingObjectScript.isSelected)
         {
-            playingObjectScript.UnSelectMe();//不选择发暗
+            playingObjectScript.UnSelectMe();//become dark if unslected
             GameOperations.instance.item1 = null;
             return;
         }
 
-        //第一个棋子
+        //the first chess
         if (GameOperations.instance.item1 == null)
         {
             GameOperations.instance.item1 = playingObjectScript;
             playingObjectScript.SelectMe();
         }
-        //第二个棋子
+        //the second chess
         else if (Vector2.Distance((Vector2)GameOperations.instance.item1.transform.position, (Vector2)transform.position) < GameManager.instance.gapBetweenObjects + .2f)
         {
             GameOperations.instance.item2 = playingObjectScript;
             playingObjectScript.SelectMe();
-            //交换类的交换项目。
+            //the swap project in swap class
             SwapTwoObject.instance.SwapTwoItems(GameOperations.instance.item1, GameOperations.instance.item2);
         }
-        //第二个棋子，但距离比较远的时候（参数清零）
+        //the second chess which is far (clear the factor)
         else
         {
             GameOperations.instance.item1.UnSelectMe();
@@ -112,7 +112,7 @@ public class PlayingObjectTouch : MonoBehaviour
         }
     }
 
-    //鼠标抬起，参数清零
+    //mouse up  and clear the parameter
     void OnMouseUp()
     {
         isTouched = false;
