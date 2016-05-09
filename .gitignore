@@ -243,3 +243,14 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+Library/metadata
+Library/ShaderCache/
+Library/UnityAssemblies/
+ProjectSettings/
+TileMatchingGame3.CSharp.csproj
+Temp/
+Library/CurrentLayout.dwlt
+Library/UnityAssemblies
+Library/metadata
+Library/metadata/00/
+Library/metadata/04/
