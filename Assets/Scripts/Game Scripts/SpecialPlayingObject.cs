@@ -32,10 +32,10 @@ public class SpecialPlayingObject : MonoBehaviour
             name = "Playing Object " + a + "(Clone)";
         }
         
-        Invoke("Start1", .05f);
+        Invoke("Start1(myPlayingObject)", .05f);
 	
 	}
-    void Start1()
+    void Start1( GameObject gameObject)
     {
         iTween.PunchScale(gameObject, new Vector3(.5f, .5f, .5f), .8f);
     }

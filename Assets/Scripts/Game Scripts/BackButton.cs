@@ -15,6 +15,7 @@
  *   
  */
 using UnityEngine;
+using UnityEditor.SceneManagement;
 using System.Collections;
 
 public class BackButton : MonoBehaviour {
@@ -27,7 +28,7 @@ public class BackButton : MonoBehaviour {
 	
 	void OnMouseDown () 
     {
-        Application.LoadLevel(0);
+        EditorSceneManager.LoadScene(0);
 	
 	}
 }

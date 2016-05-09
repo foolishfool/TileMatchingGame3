@@ -243,6 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+Library/*
 Library/metadata
 Library/ShaderCache/
 Library/UnityAssemblies/
@@ -254,3 +255,4 @@ Library/UnityAssemblies
 Library/metadata
 Library/metadata/00/
 Library/metadata/04/
+Library/assetDatabase3
