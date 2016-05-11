@@ -24,11 +24,12 @@ public class LevelButton : MonoBehaviour {
 	void Start () 
     {
         transform.FindChild("Text").GetComponent<TextMesh>().text = name;
-	
-	}
+
+    }
 
     void OnMouseDown()
     {
         Application.LoadLevel(int.Parse(name));
+        Debug.Log(name);
     }
 }

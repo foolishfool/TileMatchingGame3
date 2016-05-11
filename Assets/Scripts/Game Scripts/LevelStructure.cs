@@ -25,6 +25,7 @@ public class LevelStructure : MonoBehaviour
 
     internal int numberOfColumns;
     public int numberOfRows = 5;
+    public int completeScore;
     internal ColumnStructure[] columnStructures;
 
 
