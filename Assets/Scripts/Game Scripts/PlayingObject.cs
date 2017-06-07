@@ -2,7 +2,7 @@
  * 
  *    Title: "Diamond Crash" Project
  *           
- *    ¡°GameObject¡±Class 
+ *    ï¿½ï¿½GameObjectï¿½ï¿½Class 
  *           
  *    check whether the gameobject could be eliminated
  * 
@@ -40,7 +40,7 @@ public class PlayingObject : MonoBehaviour
     public bool isTraced = false;
     public bool brust = false;                             //whether could be eliminated
     //the chess nearby  left,right,up,down
-    public PlayingObject[] adjacentItems;                  //neighbour array£¨0£¬1£¬2£¬3 /left right up down£© 
+    public PlayingObject[] adjacentItems;                  //neighbour arrayï¿½ï¿½0ï¿½ï¿½1ï¿½ï¿½2ï¿½ï¿½3 /left right up downï¿½ï¿½ 
 
     public bool isSelected = false;
     public int itemId;                                     //current object id
@@ -213,7 +213,7 @@ public class PlayingObject : MonoBehaviour
     }
 
     /// <summary>
-    /// £¨1£©check whether can eliminate
+    /// ï¿½ï¿½1ï¿½ï¿½check whether can eliminate
     /// </summary>
     /// <returns></returns>
     internal bool CheckIfCanBrust()
@@ -242,7 +242,7 @@ public class PlayingObject : MonoBehaviour
     }
 
     /// <summary>
-    /// £¨3£©allocating the eliminated chess
+    /// ï¿½ï¿½3ï¿½ï¿½allocating the eliminated chess
     /// </summary>
     /// <param name="who"></param>
     internal void AssignBurst(string who)
@@ -296,7 +296,7 @@ public class PlayingObject : MonoBehaviour
     }
 
     /// <summary>
-    /// £¨4£©eliminate self
+    /// ï¿½ï¿½4ï¿½ï¿½eliminate self
     /// </summary>
     internal void DestroyMe()
     {
@@ -357,18 +357,18 @@ public class PlayingObject : MonoBehaviour
     internal void SelectMe()
     {
         isSelected = true;
-        transform.FindChild("Image").GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1, 1, 1, .5f));
+        transform.Find("Image").GetComponent<Renderer>().material.SetColor("_TintColor", new Color(1, 1, 1, .5f));
         
     }
 
     internal void UnSelectMe()
     {
         isSelected = false;
-        transform.FindChild("Image").GetComponent<Renderer>().material.SetColor("_TintColor", new Color(.5f, .5f, .5f, .5f));
+        transform.Find("Image").GetComponent<Renderer>().material.SetColor("_TintColor", new Color(.5f, .5f, .5f, .5f));
     }
 
     /// <summary>
-    /// £¨5£© compose the speical object
+    /// ï¿½ï¿½5ï¿½ï¿½ compose the speical object
     /// </summary>
     /// <returns></returns>
     internal GameObject WillFormSpecialObject()
@@ -378,6 +378,6 @@ public class PlayingObject : MonoBehaviour
 
     internal void Burn()
     {
-       transform.FindChild("Image").GetComponent<Renderer>().material.SetColor("_TintColor", new Color(.2f, .2f, .2f, .5f));
+       transform.Find("Image").GetComponent<Renderer>().material.SetColor("_TintColor", new Color(.2f, .2f, .2f, .5f));
     }
 }

@@ -1,11 +1,11 @@
 /***
  * 
- *    Title: "¿ìÀÖÏûÏûÀÖ" ÏîÄ¿
+ *    Title: "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ï¿½ï¿½Ä¿
  *           
- *    Ñ¡Ôñ¡°¹Ø¿¨¡±
+ *    Ñ¡ï¿½ñ¡°¹Ø¿ï¿½ï¿½ï¿½
  *           
  *    Description: 
- *          [ÃèÊö]   
+ *          [ï¿½ï¿½ï¿½ï¿½]   
  * 
  *    Date: 2015
  *    
@@ -23,7 +23,7 @@ public class LevelButton : MonoBehaviour {
 
 	void Start () 
     {
-        transform.FindChild("Text").GetComponent<TextMesh>().text = name;
+        transform.Find("Text").GetComponent<TextMesh>().text = name;
 
     }
 
