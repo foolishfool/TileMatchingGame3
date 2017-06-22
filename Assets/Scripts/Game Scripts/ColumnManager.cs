@@ -1,6 +1,6 @@
 /***
  * 
- *    Title: "Diamond Crash" ÏîÄ¿
+ *    Title: "Soul Crash" Project
  *           
  *    Column Manager 
  *           
@@ -13,7 +13,7 @@
  *    Description: 
  *  
  * 
- *    Date: 2015
+ *    Date: 2017
  *    
  *    Version: 0.1
  *    
@@ -25,7 +25,7 @@ using System.Collections;
 
 public class ColumnManager : MonoBehaviour 
 {
-    public static ColumnManager instance;
+    public static ColumnManager instance;                   //could used in other scripts by calling ColumnManager.instance and use ColumnManager's public attributes and methods.
     internal ColumnScript[] gameColumns;                   //the array of column scripts
     internal int numberOfColumns;                          //the number of columns
     
@@ -44,7 +44,7 @@ public class ColumnManager : MonoBehaviour
         for (int i = 0; i < gameColumns.Length; i++)
         {
             GameObject temp1 = new GameObject();
-            gameColumns[i] = temp1.AddComponent<ColumnScript>();
+            gameColumns[i] = temp1.AddComponent<ColumnScript>(); //all scripts must be hang with a gameojbect, dynamically generating scripts must be hang on a dynamically genearating gameobjects
             temp1.transform.parent = transform;
             temp1.name = "Column " + i.ToString();
         }

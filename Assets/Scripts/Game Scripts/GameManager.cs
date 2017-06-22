@@ -1,6 +1,6 @@
 /***
  * 
-  Title: "Diamond Crash" Project
+  Title: "Soul Crash" Project
  *           
  *    Game Manager  
  *           
@@ -9,7 +9,7 @@
  *    Description: 
  *          
  * 
- *    Date: 2016
+ *    Date: 2017
  *    
  *    Version: 0.1
  *    
@@ -21,7 +21,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance;                         
     public GameObject[] playingObjectPrefabs;
     public GameObject[] horizontalPrefabs;
     public GameObject[] verticalPrefabs;
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     internal static int numberOfItemsPoppedInaRow = 0;
 
+    
 
     void Awake()
     {
